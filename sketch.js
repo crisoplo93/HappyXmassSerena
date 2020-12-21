@@ -1,4 +1,6 @@
 let snowflakes = []; // array to hold snowflake objects
+let c_chill = color(153,0,153);
+let c_xmass = color(255,51,51);
 
 function windowResized()
 {
@@ -43,7 +45,7 @@ function snowflake() {
     // x position follows a circle
     let w = 0.6; // angular speed
     let angle = w * time + this.initialangle;
-    this.posX = width / 2 + this.radius * sin(angle)/2;
+    this.posX = width / 2 + this.radius * sin(angle);
 
     // different size snowflakes fall at slightly different y speeds
     this.posY += this.size/2;
