@@ -1,7 +1,7 @@
 let snowflakes = []; // array to hold snowflake objects
 
 function setup() {
-  createCanvas(windowWidth, windowHeigth);
+  createCanvas(windowWidth, windowHeight);
   fill(240);
   noStroke();
 }
