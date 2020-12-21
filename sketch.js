@@ -16,6 +16,8 @@ function setup() {
 function draw() {
   background(153,0,153);
   let t = frameCount / 60; // update time
+  fill(255);
+  rect(0, 100, windowWidth, windowHeight-100);
 
   // create a random number of snowflakes each frame
   for (let i = 0; i < random(5); i++) {
