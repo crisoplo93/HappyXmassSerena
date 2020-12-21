@@ -43,7 +43,7 @@ function snowflake() {
     // x position follows a circle
     let w = 0.6; // angular speed
     let angle = w * time + this.initialangle;
-    this.posX = width / 2 + this.radius * sin(angle);
+    this.posX = width / 2 + this.radius * sin(angle)/2;
 
     // different size snowflakes fall at slightly different y speeds
     this.posY += this.size/2;
