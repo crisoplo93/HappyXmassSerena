@@ -1,3 +1,1 @@
-Earthquake Data Mapped
-
-Showing all the earthquakes from today
+Happy Holidays Serena!
