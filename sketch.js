@@ -1,89 +1,65 @@
-let snowflakes = []; // array to hold snowflake objects
-var mode = "Chill";
-var song;
-var songdir  = ["songs/you-wont-let-go.mp3", "songs/mariposa.mp3"];
+    
+let snowflakes = []; // array to hold snowflake objects 
 
-
-function windowResized()
+function messageShow()
 {
-  resizeCanvas(windowWidth, windowHeight);
+  alert("----->Insert common christmas congratulation here<-----\n"
+  +"Psych!\n"
+    +"My dearest Serena!, I want to wish you a Merry Christmas\n"
+  +"(if it wasn't so obvious till now lol)"
+  +"Also to wish you all the things that are mandated by xmas law\n"
+  +"like happiness, and you now the whole bunch XD\n"
+  +"But in a serious note, also to tell you that you are a wonderful\n"
+  +"person, and I hope that your wishes and dreams come true somehow\n"
+  +"no matter how hard things may seem right now,\n"
+  +"I'm sure that you'll make it through, and I hope I'll be there\n"
+  +"to celebrate your success\n"
+  +"(You can read this part the 31th or in January :P)\n"
+  +"Have a Happy New Year!\n"
+  +"Lots of love, and always missing you <3\n"
+  +"Cristian\n"
+  +"₍•̀ ⚇•́ ₎");
 }
 
-function musicXmass()
-{
- mode = "Xmass";
-}
-
-function musicChill()
-{
-  if(typeof song !== "undefined")
-  {
-    if (song.isPlaying()) {
-      // .isPlaying() returns a boolean
-      song.stop();
-    } else {
-      song.play();
-    }
-  }
-  mode = "Chill";  
-  musicChillPlay();
-}
-
-function musicChillPlay()
-{
- var i = int(random(2))
-
- song = loadSound(songdir[i], loaded);
- 
-}
-
-function loaded()
-{
- song.play();
-}
 
 function setup() {
-  canvas = createCanvas(windowWidth, windowHeight);
+  
+  canvas = createCanvas(windowWidth+10, windowHeight+10);
   canvas.position(0,0);
   canvas.style('z-index', '-1');
   fill(240);
-  noStroke();
+  noStroke();  
 }
 
 function draw() {
+  
   let c_chill = color(153,0,153);
   let c_xmass = color(169, 50, 38);
-  if (mode == "Xmass")
-  {
-    background(c_xmass);
-  }
-  else
-  {
+  
     background(c_chill);
-  }
+  
   
   let t = frameCount / 60; // update time
   fill(245, 238, 248);
   rect(0, 100, windowWidth, windowHeight-200);
 
   // create a random number of snowflakes each frame
-  for (let i = 0; i < random(5); i++) {
-    snowflakes.push(new snowflake()); // append snowflake object
-  }
-
-  // loop through snowflakes with a for..of loop
-  for (let flake of snowflakes) {
-    flake.update(t); // update snowflake position
-    if (mode == "Xmass")
-    {
-      flake.display(c_xmass); // draw snowflake
+  if (windowWidth>windowHeight)
+  {
+    for (let i = 0; i < random(5); i++) {
+      snowflakes.push(new snowflake()); // append snowflake object
     }
-    else
-    {
-      flake.display(c_chill); // draw snowflake
+  
+    // loop through snowflakes with a for..of loop
+    for (let flake of snowflakes) {
+      flake.update(t); // update snowflake position
+      
+        flake.display(c_chill); // draw snowflake
+      
+      
     }
-    
   }
+  
 }
 
 // snowflake class
