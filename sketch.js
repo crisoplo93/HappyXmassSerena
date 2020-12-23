@@ -44,8 +44,7 @@ function draw() {
   rect(0, 100, windowWidth, windowHeight-200);
 
   // create a random number of snowflakes each frame
-  if (windowWidth>windowHeight)
-  {
+ 
     for (let i = 0; i < random(5); i++) {
       snowflakes.push(new snowflake()); // append snowflake object
     }
@@ -56,9 +55,7 @@ function draw() {
       
         flake.display(c_chill); // draw snowflake
       
-      
     }
-  }
   
 }
 
